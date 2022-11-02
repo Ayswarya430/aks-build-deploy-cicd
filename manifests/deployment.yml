@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8stest-a9ba"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8stest-a9ba"
+  template:
+    metadata:
+      labels:
+        app: "k8stest-a9ba"
+    spec:
+      containers:
+        - name: "k8stest-a9ba"
+          image: "acraksmanakkad.azurecr.io/k8stest"
+          ports:
+          - containerPort: 80
